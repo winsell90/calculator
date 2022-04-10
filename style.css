@@ -1,62 +1,37 @@
 body {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.container {  display: grid;
+.container {  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   margin-top: 20vh;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 0px 0px;
   width: 40vw;
   height: 40vw; 
   border-radius: 10px;
   background-color: #338fff;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Display Display Display Display"
-    "Clear Clear backspace divide"
-    "seven eight nine multiply"
-    "four five six minus"
-    "one two three plus"
-    "zero decimal equal equal";
 }
 
-.Display { grid-area: Display; }
+.line1, .line2, .line3, .line4, .line5 {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid red;
+  height: max-content;
+}
 
-.Clear { grid-area: Clear; }
+.buttons {
+  background-color: #ff8133;
+  border-radius: 5px;
+  font-family: 'Bebas Neue';
+  font-size: 3vw;
+  height: max-content;
+  width: 20%;
+}
 
-.backspace { grid-area: backspace; }
-
-.divide { grid-area: divide; }
-
-.seven { grid-area: seven; }
-
-.eight { grid-area: eight; }
-
-.nine { grid-area: nine; }
-
-.multiply { grid-area: multiply; }
-
-.four { grid-area: four; }
-
-.five { grid-area: five; }
-
-.six { grid-area: six; }
-
-.minus { grid-area: minus; }
-
-.one { grid-area: one; }
-
-.two { grid-area: two; }
-
-.three { grid-area: three; }
-
-.zero { grid-area: zero; }
-
-.decimal { grid-area: decimal; }
-
-.equal { grid-area: equal; }
-
-.plus { grid-area: plus; }
+.clearbtn, .equal {
+  width: 40%;
+}
