@@ -38,14 +38,15 @@ body {
   min-width: 0;
   min-height: 0;
   overflow: hidden;
-  border: 2px solid black;
+  
+  
 }
 
 .clearbtn, .equal {
   width: 47%;
 }
 
-.display {
+#display {
   width: 100%;
   display: flex;
   min-width: 0;
