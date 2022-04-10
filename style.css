@@ -14,17 +14,18 @@ body {
   width: 40vw;
   min-width: min-content;
   min-height: min-content;
-  height: 40vh; 
+  height: 55vh; 
   border-radius: 10px;
   background-color: #338fff;
+  border: 2px solid black;
 }
 
 .line1, .line2, .line3, .line4, .line5 {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
-  height: max-content;
-  min-width: zero;
+  max-height: max-content;
+  min-height: 0;
+  min-width: 0;
 }
 
 .buttons {
@@ -33,11 +34,27 @@ body {
   font-family: 'Bebas Neue';
   font-size: 3vw;
   width: 20%;
-  min-width: zero;
-  min-height: zero;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
   overflow: hidden;
+  border: 2px solid black;
 }
 
 .clearbtn, .equal {
   width: 47%;
+}
+
+.display {
+  width: 100%;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  justify-content: flex-end;
+  align-self: center;
+  background-color: #bcb7b7;
+  height: auto;
+  border: 2px solid black;
+  font-size: 4vw;
+  border-radius: 5px;
 }
