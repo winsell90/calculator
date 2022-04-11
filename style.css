@@ -34,6 +34,7 @@ body {
   opacity: 0.90;
   background: rgb(188,183,183);
   background: linear-gradient(180deg, rgba(188,183,183,1) 0%, rgba(188,183,183,1) 25%, rgba(117, 116, 110, 0.829) 40%);
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.5), 0 15px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .line1, .line2, .line3, .line4, .line5 {
@@ -45,8 +46,8 @@ body {
 }
 
 .buttons {
-  background-color: rgba(61, 61, 61, 0.708);
-  color: #ff8133;
+  background-color: rgba(3, 3, 3, 0.708);
+  color: #c7c7c7;
   border-radius: 10px;
   font-family: 'Bebas Neue';
   font-size: 3vw;
@@ -55,8 +56,6 @@ body {
   min-width: 0;
   min-height: 0;
   overflow: hidden;
-  
-  
 }
 
 #clearbtn, #equal {
@@ -64,15 +63,16 @@ body {
 }
 
 #clearbtn, #backbtn {
-  color: rgb(250, 82, 82);
+  background-color: rgb(97, 96, 96);
+  color: rgb(251, 99, 99);
 }
 
 #minus, #divide, #multiply, #add {
-  color: rgb(251, 226, 79);
+  background-color: rgb(97, 96, 96);
 }
 
 #equal {
-  color: rgb(82, 248, 82);
+  background-color: teal;
 }
 #display {
   width: 100%;
