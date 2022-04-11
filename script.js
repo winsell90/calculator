@@ -21,9 +21,34 @@ let decimal = document.getElementById('decimal');
 let equal = document.getElementById('equal');
 let clear = document.getElementById('clearbtn');
 let back = document.getElementById('backbtn');
+let a = 0;
+let b = 0;
+let c = 0;
+let d = 0;
 
 function equals() {
-  a = display.textContent;
+switch (c) {
+  case '+':
+    display.textContent = (+a + +b);
+    d = 1;
+    break;
+  case '-':
+    display.textContent = (+a - +b);
+    d = 1;
+    break;
+  case '*':
+    display.textContent = (+a * +b);
+    break;
+  case '/':
+    display.textContent = (+a / +b);
+    break;
+  case 0:
+    display.textContent = 'ERROR';
+    break;
+}
+b = 0;
+a = display.textContent;
+c = 0;
 }
 
 back.addEventListener('click', () => {
@@ -36,41 +61,72 @@ back.addEventListener('click', () => {
 equal.addEventListener('click', () => {
   if (display.textContent === '0') {
     display.textContent = 'ERROR';
-  } else {
+  } else if (d = 1) {
+     b = display.textContent;
      equals()
+     b = 0;
+     c = null;
+     a = display.textContent;
   }
 })
 clear.addEventListener('click', () => {
   display.textContent = 0;
+  a = 0;
+  b = 0;
+  c = 0;
 })
 add.addEventListener('click', () => {
-  if (display.textContent === '0') {
-    display.textContent = 'ERROR';
-  } else {
-     display.textContent += ' + ';
-  }
+ if (c == '+' || c == '-' || c == '/' || c == '*') {
+   equals()
+ } else if (a == 0) {
+  a = display.textContent;
+  c = '+';
+  display.textContent = 0;
+ } else if (d = 1) {
+   c = '+';
+   a = display.textContent;
+   display.textContent = 0;
+ }
 })
 minus.addEventListener('click', () => {
-  if (display.textContent === '0') {
-    display.textContent = 'ERROR';
-  } else {
-     display.textContent += ' - ';
+  if (c == '+' || c == '-' || c == '/' || c == '*') {
+    equals()
+  } else if (a == 0) {
+   a = display.textContent;
+   c = '-';
+   display.textContent = 0;
+  } else if (d = 1) {
+    c = '-';
+    a = display.textContent;
+    display.textContent = 0;
   }
-})
+ })
 multiply.addEventListener('click', () => {
-  if (display.textContent === '0') {
-    display.textContent = 'ERROR';
-  } else {
-     display.textContent += ' * ';
+  if (c == '+' || c == '-' || c == '/' || c == '*') {
+    equals()
+  } else if (a == 0) {
+   a = display.textContent;
+   c = '*';
+   display.textContent = 0;
+  } else if (d = 1) {
+    c = '*';
+    a = display.textContent;
+    display.textContent = 0;
   }
-})
+ })
 divide.addEventListener('click', () => {
-  if (display.textContent === '0') {
-    display.textContent = 'ERROR';
-  } else {
-     display.textContent += ' / ';
+  if (c == '+' || c == '-' || c == '/' || c == '*') {
+    equals()
+  } else if (a == 0) {
+   a = display.textContent;
+   c = '/';
+   display.textContent = 0;
+  } else if (d = 1) {
+    c = '/';
+    a = display.textContent;
+    display.textContent = 0;
   }
-})
+ })
 decimal.addEventListener('click', () => {
   if (display.textContent === '0') {
     display.textContent = '.';
@@ -137,5 +193,3 @@ nine.addEventListener('click', () => {
   } else { display.textContent += '9';
   }
 })
-
-
