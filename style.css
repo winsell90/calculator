@@ -42,7 +42,7 @@ body {
   
 }
 
-.clearbtn, .equal {
+#clearbtn, #equal {
   width: 47%;
 }
 

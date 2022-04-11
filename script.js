@@ -16,11 +16,67 @@ let nine = document.getElementById('nine');
 let add = document.getElementById('add');
 let minus = document.getElementById('minus');
 let multiply = document.getElementById('multiply');
+let divide = document.getElementById('divide');
 let decimal = document.getElementById('decimal');
 let equal = document.getElementById('equal');
 let clear = document.getElementById('clearbtn');
 let back = document.getElementById('backbtn');
 
+function equals() {
+  a = display.textContent;
+}
+
+back.addEventListener('click', () => {
+  if (display.textContent.length <= 1) {
+    display.textContent = '0';
+  } else {
+ display.textContent = display.textContent.slice(0, -1);
+  }
+});
+equal.addEventListener('click', () => {
+  if (display.textContent === '0') {
+    display.textContent = 'ERROR';
+  } else {
+     equals()
+  }
+})
+clear.addEventListener('click', () => {
+  display.textContent = 0;
+})
+add.addEventListener('click', () => {
+  if (display.textContent === '0') {
+    display.textContent = 'ERROR';
+  } else {
+     display.textContent += ' + ';
+  }
+})
+minus.addEventListener('click', () => {
+  if (display.textContent === '0') {
+    display.textContent = 'ERROR';
+  } else {
+     display.textContent += ' - ';
+  }
+})
+multiply.addEventListener('click', () => {
+  if (display.textContent === '0') {
+    display.textContent = 'ERROR';
+  } else {
+     display.textContent += ' * ';
+  }
+})
+divide.addEventListener('click', () => {
+  if (display.textContent === '0') {
+    display.textContent = 'ERROR';
+  } else {
+     display.textContent += ' / ';
+  }
+})
+decimal.addEventListener('click', () => {
+  if (display.textContent === '0') {
+    display.textContent = '.';
+  } else { display.textContent += '.';
+  }
+})
 zero.addEventListener('click', () => {
   if (display.textContent === '0') {
     display.textContent = '0';
@@ -81,4 +137,5 @@ nine.addEventListener('click', () => {
   } else { display.textContent += '9';
   }
 })
+
 
