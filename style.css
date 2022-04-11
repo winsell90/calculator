@@ -1,5 +1,5 @@
 html {
-  background-image: url('https://images.unsplash.com/photo-1635070041409-e63e783ce3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1558&q=80');
+  background-image: url('https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1752&q=80');
 }
 
 body {
@@ -8,12 +8,15 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height:100%;
 }
 
 .disclaimer {
   font-size: 2vh;
-  color: red;
-  background-color: black;
+  color: black;
+  font-weight: 600;
+  
 }
 
 .container {  
@@ -26,9 +29,11 @@ body {
   min-width: min-content;
   min-height: min-content;
   height: 55vh; 
-  border-radius: 10px;
-  background-color: #338fff;
-  border: 2px solid black;
+  border: 5px solid rgba(61, 61, 61, 0.608);
+  border-radius: 60px;
+  opacity: 0.90;
+  background: rgb(188,183,183);
+  background: linear-gradient(180deg, rgba(188,183,183,1) 0%, rgba(188,183,183,1) 25%, rgba(117, 116, 110, 0.829) 40%);
 }
 
 .line1, .line2, .line3, .line4, .line5 {
@@ -40,8 +45,9 @@ body {
 }
 
 .buttons {
-  background-color: #ff8133;
-  border-radius: 5px;
+  background-color: rgba(61, 61, 61, 0.708);
+  color: #ff8133;
+  border-radius: 10px;
   font-family: 'Bebas Neue';
   font-size: 3vw;
   width: 20%;
@@ -58,15 +64,15 @@ body {
 }
 
 #clearbtn, #backbtn {
-  background-color: red;
+  color: rgb(250, 82, 82);
 }
 
 #minus, #divide, #multiply, #add {
-  background-color: gold;
+  color: rgb(251, 226, 79);
 }
 
 #equal {
-  background-color: green;
+  color: rgb(82, 248, 82);
 }
 #display {
   width: 100%;
@@ -77,7 +83,7 @@ body {
   align-self: center;
   background-color: #bcb7b7;
   height: auto;
-  border: 2px solid black;
+  
   font-size: 4vw;
   border-radius: 5px;
 }
