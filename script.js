@@ -25,6 +25,8 @@ let a = 0;
 let b = 0;
 let c = 0;
 let d = 0;
+let e = 0;
+counter = 0;
 
 function equals() {
 switch (c) {
@@ -38,17 +40,54 @@ switch (c) {
     break;
   case '*':
     display.textContent = (+a * +b);
+    d = 1;
     break;
   case '/':
     display.textContent = (+a / +b);
+    d = 1;
     break;
   case 0:
-    display.textContent = 'ERROR';
+    equals2();
     break;
 }
 b = 0;
 a = display.textContent;
 c = 0;
+}
+
+function equals2() {
+  switch (e) {
+    case '+':
+      display.textContent = (+a + +b);
+      e = 0;
+      break;
+    case '-':
+      display.textContent = (+a - +b);
+      e = 0;
+      break;
+    case '*':
+      display.textContent = (+a * +b);
+      e = 0;
+      break;
+    case '/':
+      display.textContent = (+a / +b);
+      e = 0;
+      break;
+    case 0:
+      display.textContent = 'ERROR';
+      break;
+  }
+  b = 0;
+  a = display.textContent;
+  c = 0;
+  }
+
+function color() {
+  if ((a != 0) && (display.textContent = '0'))
+display.style.color = '#bcb7b7';
+else {
+  display.style.color = 'black';
+}
 }
 
 back.addEventListener('click', () => {
@@ -65,7 +104,7 @@ equal.addEventListener('click', () => {
      b = display.textContent;
      equals()
      b = 0;
-     c = null;
+     c = 0;
      a = display.textContent;
   }
 })
@@ -74,122 +113,321 @@ clear.addEventListener('click', () => {
   a = 0;
   b = 0;
   c = 0;
+  d = 0;
+  e = 0;
+  counter = 0;
 })
 add.addEventListener('click', () => {
- if (c == '+' || c == '-' || c == '/' || c == '*') {
-   equals()
- } else if (a == 0) {
+  if (a == 0) {
   a = display.textContent;
   c = '+';
   display.textContent = 0;
- } else if (d = 1) {
-   c = '+';
+  color();
+} else if ((a != 0) && (c == '+')) {
+  b = display.textContent;
+  equals();
+  a = display.textContent;
+  c = '+';
+ } else if ((a != 0) && (c == '*')) {
+   b = display.textContent;
+   equals();
    a = display.textContent;
-   display.textContent = 0;
- }
+   c = '+';
+ } else if ((a != 0) && (c == '/')) {
+   b = display.textContent;
+   equals();
+   a = display.textContent;
+   c = '+';
+ } else if ((a != 0) && (c == '-')) {
+   b = display.textContent;
+   equals();
+   a = display.textContent;
+   c = '+';
+  } else if ((a != 0) && (e == 0)){
+    b = display.textContent;
+    c = '+';
+    e = '+';
+    equals();
+} else {
+  b = display.textContent;
+  equals2();
+  e = 0;
+}
 })
 minus.addEventListener('click', () => {
-  if (c == '+' || c == '-' || c == '/' || c == '*') {
-    equals()
-  } else if (a == 0) {
+  if (a == 0) {
+    a = display.textContent;
+    c = '-';
+    display.textContent = 0;
+    color();
+  } else if ((a != 0) && (c == '+')) {
+   b = display.textContent;
+   equals();
    a = display.textContent;
    c = '-';
-   display.textContent = 0;
-  } else if (d = 1) {
+  } else if ((a != 0) && (c == '*')) {
+    b = display.textContent;
+    equals();
+    a = display.textContent;
     c = '-';
+  } else if ((a != 0) && (c == '/')) {
+    b = display.textContent;
+    equals();
     a = display.textContent;
-    display.textContent = 0;
+    c = '-';
+  } else if ((a != 0) && (c == '-')) {
+    b = display.textContent;
+    equals();
+    a = display.textContent;
+    c = '-';
+    } else if ((a != 0) && (e == 0)){
+      b = display.textContent;
+      c = '-';
+      e = '-';
+      equals();
+  } else {
+    b = display.textContent;
+    equals2();
+    e = 0;
   }
- })
+  })
 multiply.addEventListener('click', () => {
-  if (c == '+' || c == '-' || c == '/' || c == '*') {
-    equals()
-  } else if (a == 0) {
-   a = display.textContent;
-   c = '*';
-   display.textContent = 0;
-  } else if (d = 1) {
+  if (a == 0) {
+    a = display.textContent;
     c = '*';
-    a = display.textContent;
     display.textContent = 0;
+    color();
+  } else if ((a != 0) && (c == '+')) {
+    b = display.textContent;
+    equals();
+    a = display.textContent;
+    c = '*';
+   } else if ((a != 0) && (c == '*')) {
+     b = display.textContent;
+     equals();
+     a = display.textContent;
+     c = '*';
+   } else if ((a != 0) && (c == '/')) {
+     b = display.textContent;
+     equals();
+     a = display.textContent;
+     c = '*';
+   } else if ((a != 0) && (c == '-')) {
+     b = display.textContent;
+     equals();
+     a = display.textContent;
+     c = '*';
+    } else if ((a != 0) && (e == 0)){
+      b = display.textContent;
+      c = '*';
+      e = '*';
+      equals();
+  } else {
+    b = display.textContent;
+    equals2();
+    e = 0;
   }
- })
+  })
 divide.addEventListener('click', () => {
-  if (c == '+' || c == '-' || c == '/' || c == '*') {
-    equals()
-  } else if (a == 0) {
-   a = display.textContent;
-   c = '/';
-   display.textContent = 0;
-  } else if (d = 1) {
-    c = '/';
+  if (a == 0) {
     a = display.textContent;
+    c = '/';
     display.textContent = 0;
+    color();
+  } else if ((a != 0) && (c == '+')) {
+    b = display.textContent;
+    equals();
+    a = display.textContent;
+    c = '/';
+   } else if ((a != 0) && (c == '*')) {
+     b = display.textContent;
+     equals();
+     a = display.textContent;
+     c = '/';
+   } else if ((a != 0) && (c == '/')) {
+     b = display.textContent;
+     equals();
+     a = display.textContent;
+     c = '/';
+   } else if ((a != 0) && (c == '-')) {
+     b = display.textContent;
+     equals();
+     a = display.textContent;
+     c = '/';
+    } else if ((a != 0) && (e == 0)){
+      b = display.textContent;
+      c = '/';
+      e = '/';
+      equals();
+  } else {
+    b = display.textContent;
+    equals2();
+    e = 0;
   }
- })
+  })
 decimal.addEventListener('click', () => {
+  display.style.color = 'black';
   if (display.textContent === '0') {
     display.textContent = '.';
-  } else { display.textContent += '.';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '.';
+  } else {
+    display.textContent += '.';
   }
 })
 zero.addEventListener('click', () => {
+  display.style.color = 'black';
   if (display.textContent === '0') {
     display.textContent = '0';
-  } else { display.textContent += '0';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '0';
+  } else {
+    display.textContent += '0';
   }
 })
 one.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = '';
+    display.textContent += '1';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '1';
-  } else { display.textContent += '1';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '1';
+  } else {
+    display.textContent += '1';
   }
 })
 two.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black'; 
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = ''
+    display.textContent += '2';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '2';
-  } else { display.textContent += '2';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '2';
+  } else {
+    display.textContent += '2';
   }
 })
 three.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = ''
+    display.textContent += '3';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '3';
-  } else { display.textContent += '3';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '3';
+  } else {
+    display.textContent += '3';
   }
 })
 four.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = ''
+    display.textContent += '4';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '4';
-  } else { display.textContent += '4';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '4';
+  } else {
+    display.textContent += '4';
   }
 })
 five.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = '';
+    display.textContent += '5';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '5';
-  } else { display.textContent += '5';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '5';
+  } else {
+    display.textContent += '5';
   }
 })
 six.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = '';
+    display.textContent += '6';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '6';
-  } else { display.textContent += '6';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '6';
+  } else {
+    display.textContent += '6';
   }
 })
 seven.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = ''
+    display.textContent += '7';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '7';
-  } else { display.textContent += '7';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '7';
+  } else {
+    display.textContent += '7';
   }
 })
 eight.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = ''
+    display.textContent += '8';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '8';
-  } else { display.textContent += '8';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '8';
+  } else {
+    display.textContent += '8';
   }
 })
 nine.addEventListener('click', () => {
-  if (display.textContent === '0') {
+  display.style.color = 'black';
+  if ((b == 0) && (c == 0) && (d == 0) && display.textContent != '0' && counter > 0) {
+    a = display.textContent;
+    display.textContent = ''
+    display.textContent += '9';
+    counter++;
+  } else if (display.textContent === '0') {
     display.textContent = '9';
-  } else { display.textContent += '9';
+  } else if (d == 1) { 
+    d = 0;
+    display.textContent = '9';
+  } else {
+    display.textContent += '9';
   }
 })
